@@ -5,7 +5,11 @@ jobs:
     runs-on: ubuntu-latest
     name: A job to say hello
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout tools repo
+        uses: actions/checkout@v3
+        with:
+          repository: lcspereira/ner-annotator
+          path: ner-annotator
       - name: Hello world action step
         id: hello
         uses: lcspereira/ner-annotator@v1
